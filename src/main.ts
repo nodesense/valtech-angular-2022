@@ -1,12 +1,21 @@
-import { enableProdMode } from '@angular/core';
-import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
+// bootstrap file
+// the entry file, typescript will pick for compilation
+// the first time to be run inside browser
+// bootstrap angular application into browser
 
-import { AppModule } from './app/app.module';
-import { environment } from './environments/environment';
+import {platformBrowserDynamic} 
+            from '@angular/platform-browser-dynamic';
 
-if (environment.production) {
-  enableProdMode();
-}
+import {AppModule} from './app/app.module';
 
-platformBrowserDynamic().bootstrapModule(AppModule)
-  .catch(err => console.error(err));
+console.log("bootstrapping Angular")
+
+// This load AppModule, while loading appModule, 
+// its load all dependencies modules of app module and modules modules
+// in JIT mode, it compiles all component's view ie HTML into JavaScript
+// Look for AppModule bootstrap to load the main component ie AppComponent
+// then look for selector for bootstrap component in the DOM [index.html]
+// then creates app component instance and display on html etc...
+platformBrowserDynamic()
+            .bootstrapModule(AppModule)
+

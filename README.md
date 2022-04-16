@@ -1,3 +1,84 @@
+# Setup 
+
+1. Node.js 
+2. Visual Studio Code
+
+  2.1 Node.js setup
+
+        Open Command prompt/terminal
+
+```
+node -v
+```
+
+
+
+to uninstall angular cli previous versions
+```
+npm uninstall @angular/cli -g
+```
+
+after uninstall angular cli, close command prompt
+
+on Windows Start menu,
+type Run command
+
+inside Run shell, %APPDATA%
+
+On Windows Start button, 
+
+to install angular 9 latest
+
+```
+npm install @angular/cli@^9.1.15 -g
+```
+
+close command prompt
+
+Open new command prompt
+
+```
+ng version 
+```
+
+create a new angular project
+
+open commmand prompt
+
+```
+c:\users\yourname> ng new product-app 
+```
+```
+
+? Would you like to add Angular routing? No
+? Which stylesheet format would you like to use? SCSS 
+```
+
+Angular creates a project
+angular cli downloads npm packages/dependencies for angular project
+
+```
+cd:\users\yourname> cd product-app
+
+cd:\users\yourname\product-app> ng serve 
+```
+
+open your brower chrome/edge [not IE] http://localhost:4200
+
+```
+
+Visual Studio Code - Free, From Microsoft
+
+
+# Angular app
+
+Any angular app needs 
+    one module - register components, dependencies, etc
+    one component [ts, html, css]
+    main.ts for bootstrap
+    index.html for initial SPA
+
+
 # ProductApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.
