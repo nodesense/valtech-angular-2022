@@ -3,6 +3,49 @@
 <app-cart-table>
 </app-cart-table>
 
-<app-cart-summary></app-cart-summary>
+<!-- use property binding [] to pass data to child component:
+         parent to child communication
+         
+         child must have @Input to receive it
+         [amount] [totalItems] are child @input
+
+         "amount"  -s angular expression , the result is passed as number 
+        
+         don't use [] when passing static string values
+
+          (grandTotalChange) - event binding, parent shall susbcribe grandTotalChange event
+             $event is the value passed in emit () in child component which is grandValue value
+             we take child component computed value and assign back to parent component grandTotal
+
+
+             below we use property binding [] and event binding () together , two way binding
+             [grandTotal]="grandTotal"
+             (grandTotalChange) = "grandTotal = $event"
+            
+             for this angular has special syntatic sugar [()] - event binding + property binding
+             [()] - two way binding but the rule is @output name should be inputName + Change
+
+             [(grandTotal)]="grandTotal"
+        -->
+
+<p>At cart grand total is {{grandTotal}}</p>
+
+<!-- <app-cart-summary  [amount]="amount" 
+                   [totalItems]="totalItems"
+                   coupon="apply1"
+                   [grandTotal]="grandTotal"
+
+                   (grandTotalChange) = "grandTotal = $event"
+                   >
+</app-cart-summary> -->
+
+<!-- two way binding sugar [()] -->
+
+<app-cart-summary  [amount]="amount" 
+                   [totalItems]="totalItems"
+                   coupon="apply1"
+                   [(grandTotal)]="grandTotal"
+                   >
+</app-cart-summary>
 
 <app-checkout></app-checkout>
