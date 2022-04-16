@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 
 //decorator, useful for meta data
 // used by angular runtime
@@ -12,10 +12,22 @@ import {Component} from '@angular/core';
         'app.component.scss'
     ] 
 })
-export class AppComponent {
+export class AppComponent implements OnInit {
     // data model for data binding
     title: string = 'Product App'
     // theme is a string type, type is inferred automatically
     //  from right expression
     theme = 'light'
+
+    // called before view ready
+    constructor() {
+        console.log("App component constructor")
+    }
+
+    // called automatically once app component, created, displayed on browser
+    // view ready
+    // api calls etc
+    ngOnInit(): void {
+        console.log("App component ready ngOnInit")
+    }
 }

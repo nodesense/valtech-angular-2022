@@ -6,6 +6,10 @@ import {BrowserModule} from '@angular/platform-browser';
 
 // . means current directory, .. means parent directory
 import {AppComponent} from './app.component';
+import { HomeComponent } from './components/home/home.component';
+import { AboutComponent } from './components/about/about.component';
+import { SharedModule } from "./shared/shared.module";
+import { CartModule } from "./cart/cart.module";
 
 // Module is collection/registry of components, services, directives, pipes
 // and dependencies on other modules
@@ -17,12 +21,18 @@ import {AppComponent} from './app.component';
 @NgModule({
     // for dependencies on other modules
     //   angular modules, 3rd party libraries, or your project modules
-    imports: [BrowserModule],
+    imports: [
+        BrowserModule,
+        SharedModule,
+        CartModule
+    ],
 
     declarations: [
         // anything we use from html to be registered here
         // register components, pipes and directives here
-        AppComponent
+        AppComponent,
+        HomeComponent,
+        AboutComponent
     ],
 
     bootstrap: [

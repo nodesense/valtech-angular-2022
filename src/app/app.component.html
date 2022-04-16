@@ -7,7 +7,7 @@
             AoT - Ahead of Time - conversion takes place at build time 
                                     on build/dev machine
                                     @angular/compiler code is not shipped to browser
-                                    
+
 
         {{expr}} - interpolation
             angular execute/evaluate expression, 
@@ -17,4 +17,17 @@
 
     -->
     <h2>{{title}}</h2>
+
+    <!-- component composition , a parent component 
+        that include another components as children .
+        if the parent component destroyed, children component destroyed
+
+        home and about are child components, app is parent component
+    -->
+
+    <app-cart></app-cart>
+    <app-home></app-home>
+    <app-about></app-about>
+
+    <app-page-like></app-page-like>
 </div>

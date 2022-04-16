@@ -79,6 +79,73 @@ Any angular app needs
     index.html for initial SPA
 
 
+
+# Using Angular cli to create components modules pipes etc
+
+Adding modules, components, resue components etc 
+
+open command prompt
+
+```
+cd product-app
+```
+
+create 2 components home page, about page
+
+below command create a folder called components under app directory,
+then create a folder for home component, update app.module automatically
+
+the component name shall be prefixed with app-, app is from angular.json prefix
+
+spec.js is unit test case
+
+```
+ng generate component components/home
+
+ng g   c  components/about
+```
+
+## generate shared module
+
+reusable code that can be used anywhere
+
+will create  a folder called shared under app and create a module called shared
+
+```
+ng generate module shared
+```
+
+create few components inside shared modules
+
+```
+ng g   c  shared/components/page-like
+
+ng g  directive shared/directives/highlight
+
+ng g pipe shared/pipes/sort
+ng g pipe shared/pipes/filter
+
+```
+
+# Feature Module 
+
+Application feature can be seperate modules like orm module, account module, payrole module, invoice module etc
+
+```
+ng g m cart
+ng g c cart/components/cart
+ng g c cart/components/cart-summary
+ng g c cart/components/cart-table
+ng g c cart/components/checkout
+
+ng g service cart/services/cart
+
+ng g class cart/models/cart-item
+
+```
+
+
+
 # ProductApp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.15.

@@ -1,0 +1,44 @@
+<h2>Cart Summary</h2>
+
+<table>
+    <tr>
+        <td>Amount</td>
+        <td>{{amount}}</td>
+    </tr>
+    <tr>
+        <td>Total Items</td>
+        <td>{{totalItems}}</td>
+    </tr>
+
+    <tr>
+        <td>Discount</td>
+        <td>{{discount}} %</td>
+    </tr>
+    
+    <tr>
+        <td>Grant Total</td>
+        <td>{{grandTotal}}</td>
+    </tr>
+</table>
+
+<!-- template variables 
+        a variable declared in the html/view
+        represented using # symbol
+        useful to get reference of DOM element, or component, directive instances
+
+        couponInput is DOM object of input tag, like getElementById or jquery $("#id")
+        best practice to gelElementById or $(id) stuff
+        limited within component view
+-->
+
+<p>Coupon</p>
+<input type="text" #couponInput />
+
+<p>Coupon is {{couponInput.value}}</p>
+
+<!--
+    (event) - event binding, html template to component 
+    any html5 event can be wrapped with () to get angular event
+    $event is pre-defined name represent event value, event object, mouse click or values
+-->
+<button (click)="applyCoupon($event, couponInput.value)">Apply Coupon</button>
