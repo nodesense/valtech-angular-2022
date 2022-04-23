@@ -9,8 +9,9 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartComponent implements OnInit {
 
-  amount: number = 100
-  totalItems : number = 10
+  amount: number = 0
+  totalItems : number = 0
+
   grandTotal : number = 0;
 
   // type inference, toggleCheckout is boolean variable, 
@@ -21,9 +22,21 @@ export class CartComponent implements OnInit {
   // using private prevent some dev using them in views directly, AOT compilation will raise error
   constructor(private cartService: CartService) {
     console.log("CartComponent created...")
+
+    // copy by value
+    this.amount = this.cartService.amount // initial value
+    this.totalItems = this.cartService.totalItems
    }
 
   ngOnInit(): void {
+    // good place to susbcribe 
+    // value is passed from next function
+    // updated value
+    // for Subject, subscribe is called ONLY when next is called
+    this.cartService.amount$.subscribe ( value => {
+      console.log("Amount susbcribed is ", value)
+        this.amount = value;
+    })
   }
 
   addItem() {
