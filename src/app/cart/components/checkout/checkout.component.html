@@ -11,7 +11,12 @@
  Full Name <input name="fullName" type="text" [(ngModel)]="order.fullName" />
 
  State <select name="order.address.state" [(ngModel)]="order.address.state" (ngModelChange)="loadCities(order.address.state)" >
-     <option *ngFor="let state of states" [value]="state.id">
+     <!--  for pipes, the left side value before | is passed as first arg items  
+            and other parameters after the colon, passsed as second, 3rd ....
+            propertyName: name 
+            sortType: asc
+    -->
+     <option *ngFor="let state of (states | sort:'name':'desc')" [value]="state.id">
          {{state.name}}
      </option>
  </select>
