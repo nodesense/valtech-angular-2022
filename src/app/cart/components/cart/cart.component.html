@@ -1,7 +1,5 @@
 <h2>Cart</h2>
-
-<app-cart-table>
-</app-cart-table>
+ 
 
 <!-- use property binding [] to pass data to child component:
          parent to child communication
@@ -41,11 +39,23 @@
 
 <!-- two way binding sugar [()] -->
 
-<app-cart-summary  [amount]="amount" 
-                   [totalItems]="totalItems"
-                   coupon="apply1"
-                   [(grandTotal)]="grandTotal"
-                   >
-</app-cart-summary>
+<app-cart-table></app-cart-table>
 
-<app-checkout></app-checkout>
+<!-- *ngIf is a structural directive, it can alter DOM tree, add/remove dom elements at runtime
+* - structural directive
+-->
+
+<button (click)="toggleCheckout = !toggleCheckout">
+        {{toggleCheckout? "Hide Checkout": "Checkout" }}
+</button>
+
+<div *ngIf="toggleCheckout == true">
+        <app-cart-summary  [amount]="amount" 
+                        [totalItems]="totalItems"
+                        coupon="apply1"
+                        [(grandTotal)]="grandTotal"
+                        >
+        </app-cart-summary>
+
+        <app-checkout></app-checkout>
+ </div>

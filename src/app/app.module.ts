@@ -35,6 +35,7 @@ import { CartModule } from "./cart/cart.module";
         AboutComponent
     ],
 
+    // used in main.ts, bootStrapModule
     bootstrap: [
         AppComponent // only the app component
     ]

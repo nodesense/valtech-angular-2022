@@ -15,6 +15,7 @@ open command prompt or terminal
 ```
 
 
+
 # Setup 
 
 1. Node.js 
@@ -157,8 +158,12 @@ ng g c cart/components/checkout
 
 ng g service cart/services/cart
 
+
+ng g service cart/services/checkout
+
 ng g class cart/models/cart-item
 
+ng g class cart/models/order
 ```
 
 
