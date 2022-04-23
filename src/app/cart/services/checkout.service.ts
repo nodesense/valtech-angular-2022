@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { City } from '../models/city';
+import { Order } from '../models/order';
 import { State } from '../models/state';
 
 
@@ -24,5 +25,9 @@ export class CheckoutService {
 
    getCities(stateId: number): Observable<City[]> {
      return this.http.get<City[]> (`${API_ENDPOINT}/api/cities?stateId=${stateId}`)
+   }
+
+   checkout(order: Order): Observable<Order> {
+     return this.http.post<Order>(`${API_ENDPOINT}/api/orders`, order)
    }
 }

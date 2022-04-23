@@ -33,4 +33,23 @@ export class CheckoutComponent implements OnInit {
         })
   }
 
+  loadCities(stateId: number) {
+    console.log('loading cities for ', stateId)
+    // observables
+    this.cities$ = this.checkoutService.getCities(stateId)
+  }
+
+
+  checkout() {
+    this.order.amount = this.cartService.amount
+    this.order.totalItems = this.cartService.totalItems
+    this.order.items = this.cartService.items
+    console.log("order ", this.order)
+
+    this.checkoutService.checkout(this.order)
+        .subscribe ( savedOrder => {
+          console.log("Saved order is ", savedOrder)
+        })
+  }
+
 }
