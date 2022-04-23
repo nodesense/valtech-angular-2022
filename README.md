@@ -164,6 +164,9 @@ ng g service cart/services/checkout
 ng g class cart/models/cart-item
 
 ng g class cart/models/order
+
+ng g interface cart/models/address
+
 ```
 
 
