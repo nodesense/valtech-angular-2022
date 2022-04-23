@@ -4,7 +4,8 @@
 <button (click)="emptyCart()">Empty</button>
 
 <span > Amount {{amount}} </span>
-<span > Total Items {{totalItems}} </span>
+<!-- async susbcribe from totalItems$ and display the value published on html -->
+<span > Total Items {{totalItems$ | async}} </span>
 
 <!-- use property binding [] to pass data to child component:
          parent to child communication

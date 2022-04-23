@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
 
@@ -10,7 +11,9 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit {
 
   amount: number = 0
-  totalItems : number = 0
+  
+  // will use async pipe in html , that will susbcribe from totalItems and render on UI
+  totalItems$ : Observable<number>; 
 
   grandTotal : number = 0;
 
@@ -25,7 +28,7 @@ export class CartComponent implements OnInit {
 
     // copy by value
     this.amount = this.cartService.amount // initial value
-    this.totalItems = this.cartService.totalItems
+    this.totalItems$ = this.cartService.totalItems$
    }
 
   ngOnInit(): void {

@@ -170,6 +170,12 @@ ng g interface cart/models/address
 ```
 
 
+Pipe - Transformation of values for display purpose 
+       precision 3.34 or 3.45678
+       currncy $ 3.34
+       Date 4/23/2022 or other way
+       custom pipes like sorting, filtering
+       
 
 # ProductApp
 
