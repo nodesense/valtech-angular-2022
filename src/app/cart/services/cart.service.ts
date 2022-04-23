@@ -29,6 +29,9 @@ export class CartService {
 
     this.amount = s;
     this.totalItems = t;
+
+    console.log("amount ", this.amount)
+    console.log("totalItems ", this.totalItems)
   }
 
   addItem(item: CartItem) {
