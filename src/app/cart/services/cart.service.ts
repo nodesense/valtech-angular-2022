@@ -1,7 +1,10 @@
 import { Injectable } from '@angular/core';
 import { CartItem } from '../models/cart-item';
 
-import {Subject} from 'rxjs';
+import {Subject, BehaviorSubject} from 'rxjs';
+
+// Subject doesn't take default value, so subscriber is not called until next/publish called
+// BehaviorSubject takes default value, susbcriber called immediately with default value/latest value, then also called after while calling next
 
 // service instances created on need basic
 // service is place to have application state/centralized state for application independent of component
@@ -24,8 +27,8 @@ export class CartService {
   items: CartItem[] = []
 
   // good practice to declare Rxjs observables with $ sign at end
-  amount$: Subject<number> = new Subject()
-  totalItems$: Subject<number> = new Subject()
+  amount$: BehaviorSubject<number> = new BehaviorSubject(this._amount)
+  totalItems$: BehaviorSubject<number> = new BehaviorSubject(this._totalItems)
 
   // ES6 feature, setter and getter part of es6 
   // setter is called when we assigne values

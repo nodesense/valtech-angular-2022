@@ -11,14 +11,14 @@ import { CartService } from '../../services/cart.service';
 export class CartComponent implements OnInit {
 
   amount: number = 0
-  
+
   // will use async pipe in html , that will susbcribe from totalItems and render on UI
   totalItems$ : Observable<number>; 
 
   grandTotal : number = 0;
 
   // type inference, toggleCheckout is boolean variable, 
-  toggleCheckout = false
+  toggleCheckout = true
 
   // injecting service into cart component
   // angular will create instance for service automatically, manages the life cycle of the service

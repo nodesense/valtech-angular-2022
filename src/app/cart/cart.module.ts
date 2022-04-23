@@ -6,7 +6,9 @@ import { CartTableComponent } from './components/cart-table/cart-table.component
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { SharedModule } from '../shared/shared.module';
 
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
+import {HttpClientModule} from '@angular/common/http'
 
 @NgModule({
   declarations: [
@@ -17,7 +19,10 @@ import { SharedModule } from '../shared/shared.module';
   ],
   imports: [
     CommonModule,
-    SharedModule
+    SharedModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
 
   exports: [

@@ -167,6 +167,10 @@ ng g class cart/models/order
 
 ng g interface cart/models/address
 
+ng g interface cart/models/state
+ng g interface cart/models/city
+
+
 ```
 
 

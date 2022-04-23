@@ -13,6 +13,7 @@ import {Component, OnInit} from '@angular/core';
     ] 
 })
 export class AppComponent implements OnInit {
+    // only public variable can be used in view, not private/protected
     // data model for data binding
     title: string = 'Product App'
     // theme is a string type, type is inferred automatically

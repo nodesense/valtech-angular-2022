@@ -1,1 +1,23 @@
-<p>checkout works!</p>
+<h2>Checkout</h2>
+
+<!-- if FormsModule added to this module, then NgForm directive automatically applied on all forms -->
+<form>
+    <!-- ngModel is a attribute directive, for two way binding
+        
+        attribute directive won't make structural change [no add/remove dom]
+        no *
+        it can manipulate attributes of DOM
+    -->
+ Full Name <input name="fullName" type="text" [(ngModel)]="order.fullName" />
+
+ State <select name="order.address.state" [(ngModel)]="order.address.state">
+     <option *ngFor="let state of states" [value]="state.id">
+         {{state.name}}
+     </option>
+ </select>
+</form>
+
+<!-- debugging purpose -->
+<pre>
+    {{order | json}}
+</pre>

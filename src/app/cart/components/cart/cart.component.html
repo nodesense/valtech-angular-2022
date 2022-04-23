@@ -57,7 +57,7 @@
 
 <div *ngIf="toggleCheckout == true">
         <app-cart-summary  [amount]="amount" 
-                        [totalItems]="totalItems"
+                        [totalItems]="totalItems$ | async "
                         coupon="apply1"
                         [(grandTotal)]="grandTotal"
                         >
