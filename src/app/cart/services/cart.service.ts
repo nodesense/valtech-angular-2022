@@ -29,6 +29,7 @@ export class CartService {
   // good practice to declare Rxjs observables with $ sign at end
   amount$: BehaviorSubject<number> = new BehaviorSubject(this._amount)
   totalItems$: BehaviorSubject<number> = new BehaviorSubject(this._totalItems)
+  items$: BehaviorSubject<CartItem[]> = new BehaviorSubject(this.items)
 
   // ES6 feature, setter and getter part of es6 
   // setter is called when we assigne values
@@ -79,24 +80,41 @@ export class CartService {
 
   addItem(item: CartItem) {
     // mutation: changing original object
-    this.items.push(item)
+    // this.items.push(item)
+
+    // immutable way of adding items into array
+    // clone existing items and add item to new array, so that original array is not modified
+
+    this.items = [...this.items, item]
 
     this.calculate();
+
+    this.items$.next(this.items)
   }
 
   removeItem(id: number) {
     // mutation
-    const index = this.items.findIndex(item => item.id === id)
-    this.items.splice(index, 1) // remove 1 item from index
+    // const index = this.items.findIndex(item => item.id === id)
+    // this.items.splice(index, 1) // remove 1 item from index
     
+    // immutable way of removing item from array
+    // use filter method, filter all the items except the one we don't want
+    // return new array 
+    this.items = this.items.filter (item => item.id !== id)
+
     this.calculate();
+    this.items$.next(this.items)
   }
 
   empty() {
     // mutation
-    this.items.splice(0, this.items.length)
+    // this.items.splice(0, this.items.length)
+
+    // immutable empty, is just assign new array
+    this.items = []
     
     this.calculate();
+    this.items$.next(this.items)
   }
 
   constructor() { 

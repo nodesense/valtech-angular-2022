@@ -14,7 +14,7 @@
      <!--  for pipes, the left side value before | is passed as first arg items  
             and other parameters after the colon, passsed as second, 3rd ....
             propertyName: name 
-            sortType: asc
+            sortType: asc  desc
     -->
      <option *ngFor="let state of (states | sort:'name':'desc')" [value]="state.id">
          {{state.name}}
@@ -22,7 +22,7 @@
  </select>
 
  City  <select name="order.address.city" [(ngModel)]="order.address.city"   >
-    <option *ngFor="let city of (cities$ | async)" [value]="city.id">
+    <option *ngFor="let city of (cities$ | async  | sort:'name':'asc')" [value]="city.id">
         {{city.name}}
     </option>
 </select>

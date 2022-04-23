@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
 import { CartItem } from '../../models/cart-item';
 import { CartService } from '../../services/cart.service';
 
@@ -9,14 +10,12 @@ import { CartService } from '../../services/cart.service';
 })
 export class CartTableComponent implements OnInit {
   
-  items: CartItem[]; 
+  items$: Observable<CartItem[]>; 
 
   constructor(private cartService: CartService) { 
     console.log("CartTableComponent created")
-
-    // remember, in cart, we are mutating items
-    // items is reference in cartService
-    this.items = this.cartService.items;
+ 
+    this.items$ = this.cartService.items$;
   }
 
   ngOnInit(): void {
