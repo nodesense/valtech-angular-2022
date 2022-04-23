@@ -1,3 +1,20 @@
+# to clone the repo
+
+
+open command prompt or terminal
+
+```
+  git clone https://github.com/nodesense/valtech-angular-2022
+
+  cd valtech-angular-2022
+
+  npm install
+
+
+  ng serve
+```
+
+
 # Setup 
 
 1. Node.js 
