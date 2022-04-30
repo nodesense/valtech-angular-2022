@@ -12,7 +12,7 @@ const routes: Routes = [
     {
         path: 'cart/checkout', //  
         component: CheckoutComponent,
-        canActivate: [AuthGuard]
+     //   canActivate: [AuthGuard]
     }
 ]
 

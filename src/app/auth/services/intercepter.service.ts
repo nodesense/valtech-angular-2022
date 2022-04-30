@@ -17,6 +17,8 @@ export class IntercepterService implements HttpInterceptor  {
     console.log("Interceptor created");
   }
   
+
+  // called for evey reuest to backend, GET/HEAD/PUT/PATCH/POST/DELETE etc
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
      
     console.log ("Intercepter ", request.url, request.method);

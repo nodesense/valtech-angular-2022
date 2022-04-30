@@ -1,13 +1,13 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { environment } from 'src/environments/environment';
 import { City } from '../models/city';
 import { Order } from '../models/order';
 import { State } from '../models/state';
 
 
-//TODO: environment
-const API_ENDPOINT = 'http://localhost:7070'
+const API_ENDPOINT = environment.apiEndPoint
 
 @Injectable({
   providedIn: 'root'
