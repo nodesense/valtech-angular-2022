@@ -2,6 +2,6 @@
 
 export interface Address {
     city: string;
-    state: string;
+    state: number;
     pincode?: number; // ? means optional
 }

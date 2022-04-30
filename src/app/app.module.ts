@@ -10,6 +10,11 @@ import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { SharedModule } from "./shared/shared.module";
 import { CartModule } from "./cart/cart.module";
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
+import { AppRoutingModule } from "./app.routing";
+import { RouterModule } from "@angular/router";
 
 // Module is collection/registry of components, services, directives, pipes
 // and dependencies on other modules
@@ -24,7 +29,9 @@ import { CartModule } from "./cart/cart.module";
     imports: [
         BrowserModule,
         SharedModule,
-        CartModule
+        CartModule,
+        AppRoutingModule,
+       
     ],
 
     declarations: [
@@ -32,7 +39,10 @@ import { CartModule } from "./cart/cart.module";
         // register components, pipes and directives here
         AppComponent,
         HomeComponent,
-        AboutComponent
+        AboutComponent,
+        HeaderComponent,
+        FooterComponent,
+        NotFoundComponent
     ],
 
     // used in main.ts, bootStrapModule

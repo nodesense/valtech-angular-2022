@@ -121,6 +121,11 @@ spec.js is unit test case
 ng generate component components/home
 
 ng g   c  components/about
+
+ng g   c  components/header
+ng g   c  components/footer
+ng g   c  components/not-found
+
 ```
 
 ## generate shared module
