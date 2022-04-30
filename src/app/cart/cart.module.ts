@@ -9,6 +9,7 @@ import { SharedModule } from '../shared/shared.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms'
 
 import {HttpClientModule} from '@angular/common/http'
+import { CartRoutingModule } from './cart.routing.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import {HttpClientModule} from '@angular/common/http'
     SharedModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    CartRoutingModule
   ],
 
   exports: [
