@@ -15,7 +15,7 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from "./app.routing";
 import { RouterModule } from "@angular/router";
-import { ProductModule } from "./product/product.module";
+// import { ProductModule } from "./product/product.module";
 import { AuthModule } from "./auth/auth.module";
 
 // Module is collection/registry of components, services, directives, pipes
@@ -32,7 +32,7 @@ import { AuthModule } from "./auth/auth.module";
         BrowserModule,
         SharedModule,
         CartModule,
-        ProductModule,
+      //  ProductModule, // now lazy loaded, look for routing module
         AuthModule,
         AppRoutingModule,
         

@@ -20,8 +20,8 @@ import { AdminGuard } from '../auth/guards/admin.guard';
 
 const routes:Routes = [
   {
-    // path: 'products',
-    path : '',
+   // path: 'products',
+      path : '', // products from parent
     component: ProductHomeComponent,
 
    // canActivate: [AuthGuard],

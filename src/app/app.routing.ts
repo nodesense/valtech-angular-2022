@@ -16,7 +16,8 @@ const routes: Routes = [
         component: AboutComponent
     },
 
-    
+    // lazy loading of modules into browser
+    // code spliting, create separate bundle for product-product.module.js
     {
         path: 'products',
         loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
