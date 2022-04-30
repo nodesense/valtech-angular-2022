@@ -15,6 +15,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { AppRoutingModule } from "./app.routing";
 import { RouterModule } from "@angular/router";
+import { ProductModule } from "./product/product.module";
+import { AuthModule } from "./auth/auth.module";
 
 // Module is collection/registry of components, services, directives, pipes
 // and dependencies on other modules
@@ -30,8 +32,10 @@ import { RouterModule } from "@angular/router";
         BrowserModule,
         SharedModule,
         CartModule,
+        ProductModule,
+        AuthModule,
         AppRoutingModule,
-       
+        
     ],
 
     declarations: [

@@ -16,6 +16,12 @@ const routes: Routes = [
         component: AboutComponent
     },
 
+    
+    {
+        path: 'products',
+        loadChildren: () => import('./product/product.module').then(m => m.ProductModule)
+    },
+
     {
         path: '**',
         component: NotFoundComponent
