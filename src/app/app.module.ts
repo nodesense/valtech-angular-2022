@@ -18,6 +18,10 @@ import { RouterModule } from "@angular/router";
 // import { ProductModule } from "./product/product.module";
 import { AuthModule } from "./auth/auth.module";
 
+import {LocationStrategy, // base class/interface
+        HashLocationStrategy, // legacy, hash based url
+        PathLocationStrategy // html5 routing / default one
+} from '@angular/common'
 // Module is collection/registry of components, services, directives, pipes
 // and dependencies on other modules
 // and exports of pipe, components, directives which can be reused in 
@@ -53,6 +57,14 @@ import { AuthModule } from "./auth/auth.module";
     // used in main.ts, bootStrapModule
     bootstrap: [
         AppComponent // only the app component
+    ],
+
+    providers: [
+        {
+            provide: LocationStrategy , // base class /interface
+            //useClass: HashLocationStrategy // routing strategy based hash url #/about
+            useClass: PathLocationStrategy // html 5 route, default in angular
+        }
     ]
 })
 export class AppModule {

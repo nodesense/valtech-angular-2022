@@ -65,8 +65,8 @@ const routes: Routes = [
     AdminGuard,
 
     {
-      provide: AuthService,
-      useClass : AuthService
+      provide: AuthService, // Interface
+      useClass : AuthService //concreate class
     }, 
 
 
