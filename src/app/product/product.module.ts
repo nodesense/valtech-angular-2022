@@ -27,11 +27,11 @@ const routes:Routes = [
    // canActivate: [AuthGuard],
     // nested navigation
     children: [
-      {
-        path: '',
-        redirectTo: 'list',
-        pathMatch: 'prefix'
-      },
+      // {
+      //   path: '',
+      //   redirectTo: 'list',
+      //   pathMatch: 'prefix'
+      // },
 
       {
         path: 'list',
@@ -40,14 +40,14 @@ const routes:Routes = [
       {
         path: 'create',
         component: ProductEditComponent,
-   //     canActivate: [AdminGuard],
-     //   canDeactivate: [SaveAlertGuard]
+        canActivate: [AdminGuard],
+        canDeactivate: [SaveAlertGuard]
       },
       {
         path: 'edit/:id', // products/edit/123456
         component: ProductEditComponent,
-       // canActivate: [AdminGuard, CanEditGuard],
-     //   canDeactivate: [SaveAlertGuard]
+        canActivate: [AdminGuard, CanEditGuard],
+        canDeactivate: [SaveAlertGuard]
       }, 
       {
         path: 'search',

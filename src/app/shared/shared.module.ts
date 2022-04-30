@@ -4,6 +4,7 @@ import { PageLikeComponent } from './components/page-like/page-like.component';
 import { HighlightDirective } from './directives/highlight.directive';
 import { SortPipe } from './pipes/sort.pipe';
 import { FilterPipe } from './pipes/filter.pipe';
+import { AppAdminDirective } from './directives/app-admin.directive';
 
 
 
@@ -15,7 +16,9 @@ import { FilterPipe } from './pipes/filter.pipe';
     PageLikeComponent, 
     HighlightDirective, 
     SortPipe, 
-    FilterPipe],
+    FilterPipe,
+  AppAdminDirective
+  ],
   imports: [
     CommonModule
   ],
@@ -26,7 +29,8 @@ import { FilterPipe } from './pipes/filter.pipe';
     PageLikeComponent, 
     HighlightDirective, 
     SortPipe, 
-    FilterPipe
+    FilterPipe,
+    AppAdminDirective
   ]
 
 })

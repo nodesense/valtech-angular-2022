@@ -46,7 +46,8 @@ import { AuthModule } from "./auth/auth.module";
         AboutComponent,
         HeaderComponent,
         FooterComponent,
-        NotFoundComponent
+        NotFoundComponent,
+         
     ],
 
     // used in main.ts, bootStrapModule
