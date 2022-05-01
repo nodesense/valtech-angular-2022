@@ -7,7 +7,8 @@ import { Order } from '../models/order';
 import { State } from '../models/state';
 
 
-const API_ENDPOINT = environment.apiEndPoint
+//const API_ENDPOINT = environment.apiEndPoint
+const API_ENDPOINT = "http://localhost:7070/delayed"
 
 @Injectable({
   providedIn: 'root'

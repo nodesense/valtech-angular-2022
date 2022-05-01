@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnChanges, SimpleChanges } from '@angular/core';
 
 // Input : pass data from parent to child aka Property Binding []
 // cart is parent component for cart-summary
@@ -14,7 +14,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
   templateUrl: './cart-summary.component.html',
   styleUrls: ['./cart-summary.component.scss']
 })
-export class CartSummaryComponent implements OnInit {
+export class CartSummaryComponent implements OnInit, OnChanges {
 
   @Input()
   amount: number = 0
@@ -77,4 +77,14 @@ export class CartSummaryComponent implements OnInit {
     this.calculate()
   }
 
+
+  // called whenver input properties value got changed
+  ngOnChanges(changes: SimpleChanges): void {
+     console.log("cart Summary on changes ", changes)
+
+     if (changes['amount'].previousValue !== changes['amount'].currentValue) {
+       // custom code here to react on amount change
+     }
+      
+  }
 }

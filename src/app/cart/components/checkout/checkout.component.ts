@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscription } from 'rxjs';
 import { City } from '../../models/city';
 import { Order } from '../../models/order';
 import { State } from '../../models/state';
@@ -13,11 +13,13 @@ import { CheckoutService } from '../../services/checkout.service';
   // this limit CheckoutService instance exclusive to CheckoutComponent
   providers: [CheckoutService]
 })
-export class CheckoutComponent implements OnInit {
+export class CheckoutComponent implements OnInit, OnDestroy {
   order: Order = new Order()
 
   states: State[] = [];
   cities$: Observable<City[]>;
+
+  susbcription: Subscription = null
 
   constructor(private cartService: CartService, 
               private checkoutService: CheckoutService) { 
@@ -26,7 +28,7 @@ export class CheckoutComponent implements OnInit {
  
   ngOnInit(): void {
     //TODO: unsusbcribe
-    this.checkoutService.getStates()
+    this.susbcription =  this.checkoutService.getStates()
         .subscribe( states => {
            console.log("states data ", states)
            this.states = states;
@@ -52,4 +54,12 @@ export class CheckoutComponent implements OnInit {
         })
   }
 
+
+    ngOnDestroy(): void {
+      console.log("checkout ngOnDestroy")
+      if (this.susbcription) {
+        this.susbcription.unsubscribe()
+        this.susbcription = null
+      }
+    }
 }
